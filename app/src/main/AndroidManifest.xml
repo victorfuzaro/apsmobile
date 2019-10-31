@@ -11,7 +11,13 @@
         android:theme="@style/AppTheme">
         <activity android:name=".altera_dados_clientes"></activity>
         <activity android:name=".consulta_clientes" />
-        <activity android:name=".clientes" />
+        <activity android:name=".clientes" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".altera_dados_categoria_livros" />
         <activity android:name=".consulta_categoria_livros" />
         <activity android:name=".categoria_livros" />

@@ -21,7 +21,7 @@ public class consulta_clientes extends AppCompatActivity {
         final Cursor cursor = crud.carregaDadosClientes();
 
         String[] nomeCampos = new String[] {CriaBanco.getID(), CriaBanco.getNome(), CriaBanco.getEndereco(), CriaBanco.getCelular(), CriaBanco.getEmail(), CriaBanco.getCPF(), CriaBanco.getNascimento(), CriaBanco.getCategoriaLeitor()};
-        int[] idViews = new int[] {R.id.nome,R.id.endereco, R.id.celular, R.id.email, R.id.cpf, R.id.nascimento, R.id.categoriaLeitor};
+        int[] idViews = new int[] {R.id.codigo, R.id.nome,R.id.endereco, R.id.celular, R.id.email, R.id.cpf, R.id.nascimento, R.id.categoriaLeitor};
 
         SimpleCursorAdapter adaptador = new SimpleCursorAdapter(getBaseContext(),
                 R.layout.activity_consulta_clientes,cursor,nomeCampos,idViews, 0);
@@ -35,7 +35,7 @@ public class consulta_clientes extends AppCompatActivity {
                 String codigo;
                 cursor.moveToPosition(position);
                 codigo = cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.getID()));
-                Intent intent = new Intent(consulta_clientes.this, altera_dados_leitores.class);
+                Intent intent = new Intent(consulta_clientes.this, altera_dados_clientes.class);
                 intent.putExtra("codigo", codigo);
                 startActivity(intent);
                 finish();

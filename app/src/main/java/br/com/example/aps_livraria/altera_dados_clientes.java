@@ -38,8 +38,8 @@ public class altera_dados_clientes extends AppCompatActivity {
         cpf = (EditText)findViewById(R.id.cpf);
         nascimento = (EditText)findViewById(R.id.nascimento);
         categoriaLeitor = (EditText)findViewById(R.id.categoriaLeitor);
-        alterar = (Button)findViewById(R.id.btnAlterar);
-        cursor = crud.carregaDadoByIdLeitores(Integer.parseInt(codigo));
+        alterar = (Button)findViewById(R.id.button);
+        cursor = crud.carregaDadoByIdClientes(Integer.parseInt(codigo));
 
         nome.setText(cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.getNome())));
         endereco.setText(cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.getEndereco())));
@@ -48,6 +48,7 @@ public class altera_dados_clientes extends AppCompatActivity {
         cpf.setText(cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.getCPF())));
         nascimento.setText(cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.getNascimento())));
         categoriaLeitor.setText(cursor.getString(cursor.getColumnIndexOrThrow(CriaBanco.getCategoriaLeitor())));
+
 
         alterar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +61,7 @@ public class altera_dados_clientes extends AppCompatActivity {
             }
         });
 
-        deletar = (Button)findViewById(R.id.btnConsultar);
+        deletar = (Button)findViewById(R.id.button4);
         deletar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

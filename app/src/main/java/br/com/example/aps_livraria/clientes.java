@@ -48,7 +48,7 @@ public class clientes extends AppCompatActivity {
         botaoConsulta.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(clientes.this, consulta_categoria_livros.class);
+                Intent intent = new Intent(clientes.this, consulta_clientes.class);
                 startActivity(intent);
             }
         });

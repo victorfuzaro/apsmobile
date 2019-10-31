@@ -210,7 +210,7 @@ public class BancoController {
         String[] campos = {CriaBanco.getID(), CriaBanco.getNome(), CriaBanco.getEndereco(), CriaBanco.getCelular(), CriaBanco.getEmail(), CriaBanco.getCPF(), CriaBanco.getNascimento(), CriaBanco.getCategoriaLeitor()};
         String where = CriaBanco.getID() + "=" + id;
         db = banco.getReadableDatabase();
-        cursor = db.query(CriaBanco.getTabelaLeitores(),campos,where, null, null, null, null, null);
+        cursor = db.query(CriaBanco.getTabelaClientes(),campos,where, null, null, null, null, null);
         if(cursor!=null){
             cursor.moveToFirst();
         }
